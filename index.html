@@ -1,0 +1,109 @@
+<html>
+  <head>
+  <title>Carousel with image effect</title>
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+  <style type="text/css">
+  .content {
+    height: 400px;
+    background-color: #333;
+  }
+  .carousel-container {
+    padding-top: 100px;
+    width: 1000px;
+    margin: 0 auto;
+  }
+  .carousel {
+    height: 200px;
+    padding: 0 0 0 60px;
+    background-color: aaa;
+  }
+  .slick-prev,
+.slick-next{
+  background-color: #000;
+}
+  </style>
+  </head>
+  <body>
+  <div class="content"></div>
+  <div class="carousel-container">
+    <div class="carousel">
+      <div><img src="img/test-1.jpg" height="120" width="100" alt=""></div>
+      <div><img src="img/test-2.jpg" height="120" width="100" alt=""></div>
+      <div><img src="img/test-3.jpg" height="120" width="100" alt=""></div>
+      <div><img src="img/test-1.jpg" height="120" width="100" alt=""></div>
+      <div><img src="img/test-2.jpg" height="120" width="100" alt=""></div>
+      <div><img src="img/test-3.jpg" height="120" width="100" alt=""></div>
+      <div><img src="img/test-1.jpg" height="120" width="100" alt=""></div>
+      <div><img src="img/test-2.jpg" height="120" width="100" alt=""></div>
+      <div><img src="img/test-3.jpg" height="120" width="100" alt=""></div>
+      <div><img src="img/test-1.jpg" height="120" width="100" alt=""></div>
+      <div><img src="img/test-2.jpg" height="120" width="100" alt=""></div>
+      <div><img src="img/test-3.jpg" height="120" width="100" alt=""></div>
+      <div><img src="img/test-1.jpg" height="120" width="100" alt=""></div>
+      <div><img src="img/test-2.jpg" height="120" width="100" alt=""></div>
+      <div><img src="img/test-3.jpg" height="120" width="100" alt=""></div>
+      <div><img src="img/test-1.jpg" height="120" width="100" alt=""></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      // Carousel settings
+      $('.carousel').slick({
+        arrows: true,
+        // dots: true,
+        slidesToScroll: 4,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        // centerMode: true,
+        // centerPadding: '140px',
+        slidesToShow: 6,
+        responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
+          }
+        }
+      ]
+      });
+
+      // Animate object
+      $("img").hover(function(){
+    $(this).stop(true, false).animate({ 
+      width: "140px", 
+      height: "168px", 
+      marginTop: '10px',
+      marginLeft: '-20px'
+      });
+}, function() {
+    $(this).stop(true, false).animate({ 
+      width: "100px", 
+      height: "120px",
+      marginTop: '0px',
+      marginLeft: '0px' 
+    });
+});
+
+    });
+  </script>
+
+  </body>
+</html>
